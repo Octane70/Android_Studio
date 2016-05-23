@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Android/Android_Studio/PiUi/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Android/Android_Studio/PiUi/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_b1877825ce84365fe76d71ffb83f3b4ad7457d4d.jar" />
+    </item>
+    <item
+        jar="/Android/Android_Studio/PiUi/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Android/Android_Studio/PiUi/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_3167179e6a28888ce9913dd11eb8239a2d8673b9.jar" />
+    </item>
+    <item
+        jar="/Android/Android_Studio/PiUi/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Android/Android_Studio/PiUi/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_0aff4bf6c6f4859883d8ae01afe0e24348afbf4f.jar" />
+    </item>
+    <item
+        jar="/Android/Android_Studio/PiUi/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Android/Android_Studio/PiUi/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_5e9134c9d865b14bc2c0f3d680f12293801b449f.jar" />
+    </item>
+    <item
+        jar="/Android/Android_Studio/PiUi/app/libs/jmdns.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="0d2eb0ba46273eeecc9b18f382ec22d847fec7d7">
+        <dex dex="/Android/Android_Studio/PiUi/app/build/intermediates/pre-dexed/debug/jmdns_fe43d27b62031b2d76a834c00581e8d059e82454.jar" />
+    </item>
+    <item
+        jar="/home/rob/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Android/Android_Studio/PiUi/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_1653d0ee713ec6cc6f2dfff63de41b02cf19da31.jar" />
+    </item>
+    <item
+        jar="/Android/Android_Studio/PiUi/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Android/Android_Studio/PiUi/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_daf3ba14485bdee698c029ba29b7cae16425d4d4.jar" />
+    </item>
+
+</items>
