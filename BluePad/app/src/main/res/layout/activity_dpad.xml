@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:ignore="HardcodedText"
+        tools:ignore="HardcodedText,RtlHardcoded"
         android:layout_marginLeft="50dp" />
 
     <Button
@@ -37,10 +37,9 @@
         android:layout_height="175dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/buttons"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
+        tools:ignore="MissingConstraints,RtlHardcoded"
         android:layout_marginRight="50dp"
         app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>
