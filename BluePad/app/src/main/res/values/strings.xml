@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">BluePad</string>
     <string name="title_activity_button">Dpad</string>
+    <string name="button">Button</string>
 </resources>
