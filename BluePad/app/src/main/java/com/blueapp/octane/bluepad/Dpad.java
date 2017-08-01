@@ -17,6 +17,8 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.UUID;
 
+import static com.blueapp.octane.bluepad.R.drawable.buttons;
+
 public class Dpad extends AppCompatActivity {
 
     String address = null;
@@ -43,6 +45,7 @@ public class Dpad extends AppCompatActivity {
         TextView statusView = (TextView)findViewById(R.id.status);
 
         final View dpad = (View)findViewById(R.id.dpad);
+        final View buttons = (View)findViewById(R.id.buttons);
 
         statusView.setText("Connecting to " + deviceName);
 
@@ -65,6 +68,22 @@ public class Dpad extends AppCompatActivity {
             }
         });
 
+        buttons.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("4", buttons, event));
+
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    send(buildMessage("3", buttons, event));
+
+                } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                    send(buildMessage("5", buttons, event));
+                }
+                return false;
+            }
+        });
     }
 
     private String buildMessage(String operation, View roundButton, MotionEvent event) {
