@@ -10,14 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.UUID;
-
-import static com.blueapp.octane.bluepad.R.drawable.buttons;
 
 public class Dpad extends AppCompatActivity {
 
@@ -44,42 +41,42 @@ public class Dpad extends AppCompatActivity {
 
         TextView statusView = (TextView)findViewById(R.id.status);
 
-        final View dpad = (View)findViewById(R.id.dpad);
-        final View buttons = (View)findViewById(R.id.buttons);
+        final View up_dpad = (View)findViewById(R.id.up_dpad);
+        final View down_dpad = (View)findViewById(R.id.down_dpad);
 
         statusView.setText("Connecting to " + deviceName);
 
         new ConnectBT().execute();
 
-        dpad.setOnTouchListener(new View.OnTouchListener() {
+        up_dpad.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("1", dpad, event));
+                    send(buildMessage("1", up_dpad, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("0", dpad, event));
+                    send(buildMessage("0", up_dpad, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                    send(buildMessage("2", dpad, event));
+                    send(buildMessage("2", up_dpad, event));
                 }
                 return false;
             }
         });
 
-        buttons.setOnTouchListener(new View.OnTouchListener() {
+        down_dpad.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("4", buttons, event));
+                    send(buildMessage("4", down_dpad, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("3", buttons, event));
+                    send(buildMessage("3", down_dpad, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                    send(buildMessage("5", buttons, event));
+                    send(buildMessage("5", down_dpad, event));
                 }
                 return false;
             }

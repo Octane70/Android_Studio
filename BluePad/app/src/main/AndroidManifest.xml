@@ -18,7 +18,7 @@
         <activity
             android:name=".Devices"
             android:configChanges="orientation"
-            android:screenOrientation="landscape">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,7 +27,7 @@
         <activity
             android:name=".Dpad"
             android:configChanges="orientation"
-            android:screenOrientation="landscape">
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
