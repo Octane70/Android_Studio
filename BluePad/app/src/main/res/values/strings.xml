@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">BluePad</string>
     <string name="title_activity_button">Dpad</string>
-    <string name="right">Right</string>
-    <string name="auto">Auto</string>
+    <string name="up">Up</string>
     <string name="down">Down</string>
     <string name="left">Left</string>
+    <string name="right">Right</string>
     <string name="manual">Manual</string>
+    <string name="auto">Auto</string>
 </resources>
