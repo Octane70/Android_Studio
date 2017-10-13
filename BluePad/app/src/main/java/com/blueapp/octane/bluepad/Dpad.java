@@ -44,6 +44,7 @@ public class Dpad extends AppCompatActivity {
         final View up_dpad = (View)findViewById(R.id.up_dpad);
         final View down_dpad = (View)findViewById(R.id.down_dpad);
         final View left_dpad = (View)findViewById(R.id.left_dpad);
+        final View right_dpad = (View)findViewById(R.id.right_dpad);
 
 
         statusView.setText("Connecting to " + deviceName);
@@ -96,6 +97,23 @@ public class Dpad extends AppCompatActivity {
 
                 } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
                     send(buildMessage("2", left_dpad, event));
+                }
+                return false;
+            }
+        });
+
+        right_dpad.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("1", right_dpad, event));
+
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    send(buildMessage("0", right_dpad, event));
+
+                } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                    send(buildMessage("2", right_dpad, event));
                 }
                 return false;
             }
