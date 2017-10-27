@@ -41,10 +41,12 @@ public class Dpad extends AppCompatActivity {
 
         TextView statusView = (TextView)findViewById(R.id.status);
 
-        final View up_dpad = (View)findViewById(R.id.up_dpad);
-        final View down_dpad = (View)findViewById(R.id.down_dpad);
-        final View left_dpad = (View)findViewById(R.id.left_dpad);
-        final View right_dpad = (View)findViewById(R.id.right_dpad);
+        final View up_dpad = findViewById(R.id.up_dpad);
+        final View down_dpad = findViewById(R.id.down_dpad);
+        final View left_dpad = findViewById(R.id.left_dpad);
+        final View right_dpad = findViewById(R.id.right_dpad);
+        final View manual = findViewById(R.id.manual);
+        final View auto = findViewById(R.id.auto);
 
 
         statusView.setText("Connecting to " + deviceName);
@@ -59,9 +61,6 @@ public class Dpad extends AppCompatActivity {
                     send(buildMessage("1", up_dpad, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("0", up_dpad, event));
-
-                } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
                     send(buildMessage("2", up_dpad, event));
                 }
                 return false;
@@ -73,13 +72,10 @@ public class Dpad extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("1", down_dpad, event));
+                    send(buildMessage("3", down_dpad, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("0", down_dpad, event));
-
-                } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                    send(buildMessage("2", down_dpad, event));
+                    send(buildMessage("4", down_dpad, event));
                 }
                 return false;
             }
@@ -90,13 +86,10 @@ public class Dpad extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("1", left_dpad, event));
+                    send(buildMessage("5", left_dpad, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("0", left_dpad, event));
-
-                } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                    send(buildMessage("2", left_dpad, event));
+                    send(buildMessage("6", left_dpad, event));
                 }
                 return false;
             }
@@ -107,13 +100,38 @@ public class Dpad extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("1", right_dpad, event));
+                    send(buildMessage("7", right_dpad, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("0", right_dpad, event));
+                    send(buildMessage("8", right_dpad, event));
+                }
+                return false;
+            }
+        });
 
-                } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
-                    send(buildMessage("2", right_dpad, event));
+        manual.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("9", manual, event));
+
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    send(buildMessage("10", manual, event));
+                }
+                return false;
+            }
+        });
+
+        auto.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("11", auto, event));
+
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    send(buildMessage("12", auto, event));
                 }
                 return false;
             }
@@ -121,9 +139,7 @@ public class Dpad extends AppCompatActivity {
     }
 
     private String buildMessage(String operation, View roundButton, MotionEvent event) {
-        double x = (event.getX() - (roundButton.getWidth() / 2)) / (roundButton.getWidth() / 2);
-        double y = (event.getY() - (roundButton.getHeight() / 2)) / (roundButton.getHeight() /2) * -1;
-        return (operation + "," + String.valueOf(x) + "," + String.valueOf(y) + "\n");
+        return operation;
     }
 
     private void send(String message) {
