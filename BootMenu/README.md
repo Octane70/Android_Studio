@@ -1,9 +1,9 @@
-Simple-Reboot-app
+Boot Menu
 =================
 
-Source code for my free app Simple Reboot. It's nothing fancy, just pushed following a user request.
+Source code for a personal modified version of franciscofranco's Simple-Reboot-app.
 
-Play Store link: https://play.google.com/store/apps/details?id=simple.reboot.com
+https://github.com/franciscofranco/Simple-Reboot-app
 
 libsuperuser from Chainfire (https://github.com/Chainfire/libsuperuser)
 ButterKnife from JakeWharton (https://github.com/JakeWharton/butterknife)
