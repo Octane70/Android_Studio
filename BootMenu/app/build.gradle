@@ -6,14 +6,14 @@ ext {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
-        applicationId 'simple.reboot.com'
+        applicationId 'boot.menu.com'
         minSdkVersion 16
         targetSdkVersion 25
         versionCode getVersionCodeTimestamp()
-        versionName "7.0.1"
+        versionName "1.0.0"
     }
 
     compileOptions {

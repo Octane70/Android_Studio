@@ -1,4 +1,4 @@
-package simple.reboot.com;
+package boot.menu.com;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String REBOOT_BOOTLOADER_CMD = "reboot bootloader";
     private static final String[] REBOOT_SAFE_MODE
             = new String[]{"setprop persist.sys.safemode 1", REBOOT_SOFT_REBOOT_CMD};
-    private static final String PLAY_STORE_MY_APPS
-            = "https://play.google.com/store/apps/developer?id=Francisco+Franco";
 
     private static final int RUNNABLE_DELAY_MS = 1000;
 
@@ -108,12 +106,6 @@ public class MainActivity extends AppCompatActivity {
      *
      * @see <a href="http://jakewharton.github.io/butterknife/">ButterKnife</a>
      */
-    @OnClick(R.id.about)
-    public void onAboutClick(View view) {
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse(PLAY_STORE_MY_APPS));
-        startActivity(i);
-    }
 
     @OnClick(R.id.shutdown)
     public void onShutdownClick(View view) {

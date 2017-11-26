@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="simple.reboot.com">
+    package="boot.menu.com">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme.DialogStyle"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:vmSafeMode="${vmSafeModeEnabled}">
 
         <activity
