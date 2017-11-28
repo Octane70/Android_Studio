@@ -90,6 +90,7 @@
                 android:padding="@dimen/itemPadding"
                 android:text="@string/reboot" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,7 +101,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:contentDescription="@string/ic_shutdown"
+                android:contentDescription="@string/ic_soft_reboot"
                 android:src="@drawable/ic_soft_reboot" />
 
             <TextView
@@ -114,37 +115,79 @@
                 android:padding="@dimen/itemPadding"
                 android:text="@string/soft_reboot" />
         </LinearLayout>
-        <TextView
-            android:id="@+id/reboot_recovery"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:minHeight="@dimen/itemMinHeight"
-            android:padding="@dimen/itemPadding"
-            android:text="@string/reboot_recovery"/>
 
-        <TextView
-            android:id="@+id/reboot_bootloader"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:minHeight="@dimen/itemMinHeight"
-            android:padding="@dimen/itemPadding"
-            android:text="@string/reboot_bootloader"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/reboot_safe_mode"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center"
-            android:minHeight="@dimen/itemMinHeight"
-            android:padding="@dimen/itemPadding"
-            android:text="@string/reboot_safe_mode"/>
+            <ImageView
+                android:id="@+id/ic_reboot_recovery"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/ic_reboot_recovery"
+                android:src="@drawable/ic_recovery2" />
+
+            <TextView
+                android:id="@+id/reboot_recovery"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="241dp"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/itemMinHeight"
+                android:padding="@dimen/itemPadding"
+                android:text="@string/reboot_recovery" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ic_reboot_bootloader"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/ic_bootloader"
+                android:src="@drawable/ic_bootloader" />
+
+            <TextView
+                android:id="@+id/reboot_bootloader"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/itemMinHeight"
+                android:padding="@dimen/itemPadding"
+                android:text="@string/reboot_bootloader" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ic_reboot_safe_mode"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/ic_safe_mode"
+                android:src="@drawable/ic_safe_mode" />
+
+            <TextView
+                android:id="@+id/reboot_safe_mode"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="239dp"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/itemMinHeight"
+                android:padding="@dimen/itemPadding"
+                android:text="@string/reboot_safe_mode" />
+        </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>
