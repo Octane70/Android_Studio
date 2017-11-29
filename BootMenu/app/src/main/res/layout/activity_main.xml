@@ -56,7 +56,7 @@
             <TextView
                 android:id="@+id/shutdown"
                 style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="227dp"
+                android:layout_width="@dimen/textWidth"
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackground"
                 android:gravity="center_vertical"
@@ -82,7 +82,7 @@
             <TextView
                 android:id="@+id/reboot"
                 style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="228dp"
+                android:layout_width="@dimen/textWidth"
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackground"
                 android:gravity="center_vertical"
@@ -107,7 +107,7 @@
             <TextView
                 android:id="@+id/soft_reboot"
                 style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="241dp"
+                android:layout_width="@dimen/textWidth"
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackground"
                 android:gravity="center_vertical"
@@ -132,7 +132,7 @@
             <TextView
                 android:id="@+id/reboot_recovery"
                 style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="241dp"
+                android:layout_width="@dimen/textWidth"
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackground"
                 android:gravity="center_vertical"
@@ -157,7 +157,7 @@
             <TextView
                 android:id="@+id/reboot_bootloader"
                 style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="240dp"
+                android:layout_width="@dimen/textWidth"
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackground"
                 android:gravity="center_vertical"
@@ -181,7 +181,7 @@
             <TextView
                 android:id="@+id/reboot_safe_mode"
                 style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="239dp"
+                android:layout_width="@dimen/textWidth"
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackground"
                 android:gravity="center_vertical"
