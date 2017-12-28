@@ -47,7 +47,11 @@ public class Dpad extends AppCompatActivity {
         final View right_dpad = findViewById(R.id.right_dpad);
         final View manual = findViewById(R.id.manual);
         final View auto = findViewById(R.id.auto);
-
+        final View e_stop = findViewById(R.id.e_stop);
+        final View left_pwm_pos = findViewById(R.id.left_pwm_pos);
+        final View left_pwm_neg = findViewById(R.id.left_pwm_neg);
+        final View right_pwm_pos = findViewById(R.id.right_pwm_pos);
+        final View right_pwm_neg = findViewById(R.id.right_pwm_neg);
 
         statusView.setText("Connecting to " + deviceName);
 
@@ -136,6 +140,71 @@ public class Dpad extends AppCompatActivity {
                 return false;
             }
         });
+
+        e_stop.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("13", e_stop, event));
+
+                }
+                return false;
+            }
+        });
+
+        left_pwm_pos.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("14", left_pwm_pos, event));
+
+                }
+                return false;
+            }
+        });
+
+        left_pwm_neg.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("15", left_pwm_neg, event));
+
+                }
+                return false;
+            }
+        });
+
+
+        right_pwm_pos.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("16", right_pwm_pos, event));
+
+                }
+                return false;
+            }
+        });
+
+
+        right_pwm_neg.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("17", right_pwm_neg, event));
+
+                }
+                return false;
+            }
+        });
+
+
+
     }
 
     private String buildMessage(String operation, View roundButton, MotionEvent event) {
