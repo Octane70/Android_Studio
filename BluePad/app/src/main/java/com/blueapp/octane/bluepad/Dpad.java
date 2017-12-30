@@ -48,6 +48,7 @@ public class Dpad extends AppCompatActivity {
         final View manual = findViewById(R.id.manual);
         final View auto = findViewById(R.id.auto);
         final View e_stop = findViewById(R.id.e_stop);
+        final View shutdown = findViewById(R.id.shutdown);
         final View left_pwm_pos = findViewById(R.id.left_pwm_pos);
         final View left_pwm_neg = findViewById(R.id.left_pwm_neg);
         final View right_pwm_pos = findViewById(R.id.right_pwm_pos);
@@ -120,8 +121,6 @@ public class Dpad extends AppCompatActivity {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("9", manual, event));
 
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("10", manual, event));
                 }
                 return false;
             }
@@ -132,10 +131,8 @@ public class Dpad extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("11", auto, event));
+                    send(buildMessage("10", auto, event));
 
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("12", auto, event));
                 }
                 return false;
             }
@@ -146,7 +143,19 @@ public class Dpad extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("13", e_stop, event));
+                    send(buildMessage("11", e_stop, event));
+
+                }
+                return false;
+            }
+        });
+
+        shutdown.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("12", shutdown, event));
 
                 }
                 return false;
@@ -158,7 +167,7 @@ public class Dpad extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("14", left_pwm_pos, event));
+                    send(buildMessage("13", left_pwm_pos, event));
 
                 }
                 return false;
@@ -170,44 +179,40 @@ public class Dpad extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("15", left_pwm_neg, event));
+                    send(buildMessage("14", left_pwm_neg, event));
 
                 }
                 return false;
             }
         });
-
 
         right_pwm_pos.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("16", right_pwm_pos, event));
+                    send(buildMessage("15", right_pwm_pos, event));
 
                 }
                 return false;
             }
         });
-
 
         right_pwm_neg.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("17", right_pwm_neg, event));
+                    send(buildMessage("16", right_pwm_neg, event));
 
                 }
                 return false;
             }
         });
 
-
-
     }
 
-    private String buildMessage(String operation, View roundButton, MotionEvent event) {
+    private String buildMessage(String operation, View Buttons, MotionEvent event) {
         return operation;
     }
 

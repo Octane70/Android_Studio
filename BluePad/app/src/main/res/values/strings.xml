@@ -8,6 +8,7 @@
     <string name="manual">Manual</string>
     <string name="auto">Auto</string>
     <string name="e_stop">E-Stop</string>
+    <string name="shutdown">Shutdown</string>
     <string name="right_pwm_pos">+</string>
     <string name="right_pwm_neg">-</string>
     <string name="left_pwm_pos">+</string>
