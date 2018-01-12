@@ -20,6 +20,10 @@ public class Dpad extends AppCompatActivity {
 
     String address = null;
     String deviceName = null;
+    TextView lm_showValue;
+    TextView rm_showValue;
+    int lm_counter = 100;
+    int rm_counter = 100;
 
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
@@ -39,7 +43,9 @@ public class Dpad extends AppCompatActivity {
         deviceName = newint.getStringExtra(Devices.EXTRA_NAME);
         address = newint.getStringExtra(Devices.EXTRA_ADDRESS);
 
-        TextView statusView = (TextView)findViewById(R.id.status);
+        TextView statusView = (TextView) findViewById(R.id.status);
+        lm_showValue = (TextView) findViewById(R.id.left_value);
+        rm_showValue = (TextView) findViewById(R.id.right_value);
 
         final View up_dpad = findViewById(R.id.up_dpad);
         final View down_dpad = findViewById(R.id.down_dpad);
@@ -212,6 +218,45 @@ public class Dpad extends AppCompatActivity {
 
     }
 
+    public void left_pos (View view) {
+        if (lm_counter < 100) {
+            lm_counter++;
+            lm_showValue.setText(Integer.toString(lm_counter));
+        }
+        else {
+            return;
+        }
+    }
+
+    public void left_neg (View view){
+        if(lm_counter > 0) {
+            lm_counter--;
+            lm_showValue.setText(Integer.toString(lm_counter));
+        }
+        else {
+            return;
+        }
+    }
+
+    public void right_pos (View view) {
+        if (rm_counter < 100) {
+            rm_counter++;
+            rm_showValue.setText(Integer.toString(rm_counter));
+        }
+        else {
+            return;
+        }
+    }
+
+    public void right_neg (View view) {
+        if (rm_counter > 0) {
+            rm_counter--;
+            rm_showValue.setText(Integer.toString(rm_counter));
+        }
+        else {
+            return;
+        }
+    }
     private String buildMessage(String operation, View Buttons, MotionEvent event) {
         return operation;
     }

@@ -15,4 +15,6 @@
     <string name="left_pwm_neg">-</string>
     <string name="left_motor">LM</string>
     <string name="right_motor">RM</string>
+    <string name="left_value">100</string>
+    <string name="right_value">100</string>
 </resources>
