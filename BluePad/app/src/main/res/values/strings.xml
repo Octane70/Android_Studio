@@ -9,12 +9,12 @@
     <string name="auto">Auto</string>
     <string name="e_stop">E-Stop</string>
     <string name="shutdown">Shutdown</string>
-    <string name="right_pwm_pos">+</string>
-    <string name="right_pwm_neg">-</string>
-    <string name="left_pwm_pos">+</string>
-    <string name="left_pwm_neg">-</string>
-    <string name="left_motor">LM</string>
-    <string name="right_motor">RM</string>
-    <string name="left_value">100</string>
+    <string name="vol_pos">+</string>
+    <string name="vol_neg">-</string>
+    <string name="sound_on">on</string>
+    <string name="sound_off">off</string>
+    <string name="sound">Sfx</string>
+    <string name="volume">Vol</string>
+    <string name="sound_cntrl">Sound Control</string>
     <string name="right_value">100</string>
 </resources>

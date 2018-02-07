@@ -22,7 +22,7 @@ public class Dpad extends AppCompatActivity {
     String deviceName = null;
     TextView lm_showValue;
     TextView rm_showValue;
-    int lm_counter = 100;
+    int lm_counter = off;
     int rm_counter = 100;
 
     BluetoothAdapter myBluetooth = null;
@@ -55,8 +55,8 @@ public class Dpad extends AppCompatActivity {
         final View auto = findViewById(R.id.auto);
         final View e_stop = findViewById(R.id.e_stop);
         final View shutdown = findViewById(R.id.shutdown);
-        final View left_pwm_pos = findViewById(R.id.left_pwm_pos);
-        final View left_pwm_neg = findViewById(R.id.left_pwm_neg);
+        final View sound_on = findViewById(R.id.sound_on);
+        final View sound_off = findViewById(R.id.sound_off);
         final View right_pwm_pos = findViewById(R.id.right_pwm_pos);
         final View right_pwm_neg = findViewById(R.id.right_pwm_neg);
 
@@ -168,24 +168,24 @@ public class Dpad extends AppCompatActivity {
             }
         });
 
-        left_pwm_pos.setOnTouchListener(new View.OnTouchListener() {
+        sound_on.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("13", left_pwm_pos, event));
+                    send(buildMessage("13", sound_on, event));
 
                 }
                 return false;
             }
         });
 
-        left_pwm_neg.setOnTouchListener(new View.OnTouchListener() {
+        sound_off.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("14", left_pwm_neg, event));
+                    send(buildMessage("14", sound_off, event));
 
                 }
                 return false;
@@ -216,26 +216,6 @@ public class Dpad extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void left_pos (View view) {
-        if (lm_counter < 100) {
-            lm_counter++;
-            lm_showValue.setText(Integer.toString(lm_counter));
-        }
-        else {
-            return;
-        }
-    }
-
-    public void left_neg (View view){
-        if(lm_counter > 0) {
-            lm_counter--;
-            lm_showValue.setText(Integer.toString(lm_counter));
-        }
-        else {
-            return;
-        }
     }
 
     public void right_pos (View view) {
