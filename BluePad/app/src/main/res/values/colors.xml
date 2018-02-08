@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="e_stop">#FF1919</color>
+    <color name="sound_on">#128521</color>
+    <color name="sound_off">#FF1919</color>
 </resources>

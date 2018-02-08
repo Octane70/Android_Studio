@@ -20,10 +20,10 @@ public class Dpad extends AppCompatActivity {
 
     String address = null;
     String deviceName = null;
-    TextView lm_showValue;
-    TextView rm_showValue;
-    int lm_counter = off;
-    int rm_counter = 100;
+    TextView sound_value_showValue;
+    TextView volume_value_showValue;
+    int on_off = 0;
+    int vol_counter = 100;
 
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
@@ -44,8 +44,8 @@ public class Dpad extends AppCompatActivity {
         address = newint.getStringExtra(Devices.EXTRA_ADDRESS);
 
         TextView statusView = (TextView) findViewById(R.id.status);
-        lm_showValue = (TextView) findViewById(R.id.left_value);
-        rm_showValue = (TextView) findViewById(R.id.right_value);
+        sound_value_showValue = (TextView) findViewById(R.id.sound_value);
+        volume_value_showValue = (TextView) findViewById(R.id.volume_value);
 
         final View up_dpad = findViewById(R.id.up_dpad);
         final View down_dpad = findViewById(R.id.down_dpad);
@@ -57,8 +57,8 @@ public class Dpad extends AppCompatActivity {
         final View shutdown = findViewById(R.id.shutdown);
         final View sound_on = findViewById(R.id.sound_on);
         final View sound_off = findViewById(R.id.sound_off);
-        final View right_pwm_pos = findViewById(R.id.right_pwm_pos);
-        final View right_pwm_neg = findViewById(R.id.right_pwm_neg);
+        final View volume_up = findViewById(R.id.volume_up);
+        final View volume_down = findViewById(R.id.volume_down);
 
         statusView.setText("Connecting to " + deviceName);
 
@@ -192,24 +192,24 @@ public class Dpad extends AppCompatActivity {
             }
         });
 
-        right_pwm_pos.setOnTouchListener(new View.OnTouchListener() {
+        volume_up.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("15", right_pwm_pos, event));
+                    send(buildMessage("15", volume_up, event));
 
                 }
                 return false;
             }
         });
 
-        right_pwm_neg.setOnTouchListener(new View.OnTouchListener() {
+        volume_down.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("16", right_pwm_neg, event));
+                    send(buildMessage("16", volume_down, event));
 
                 }
                 return false;
@@ -218,20 +218,40 @@ public class Dpad extends AppCompatActivity {
 
     }
 
-    public void right_pos (View view) {
-        if (rm_counter < 100) {
-            rm_counter++;
-            rm_showValue.setText(Integer.toString(rm_counter));
+    public void sound_on (View view) {
+        if (on_off == 0) {;
+            on_off = 1;
+            sound_value_showValue.setText(Integer.toString(on_off));
         }
         else {
             return;
         }
     }
 
-    public void right_neg (View view) {
-        if (rm_counter > 0) {
-            rm_counter--;
-            rm_showValue.setText(Integer.toString(rm_counter));
+    public void sound_off (View view){
+        if(on_off == 1) {
+            on_off = 0;
+            sound_value_showValue.setText(Integer.toString(on_off));
+        }
+        else {
+            return;
+        }
+    }
+
+    public void volume_up (View view) {
+        if (vol_counter < 100) {
+            vol_counter++;
+            volume_value_showValue.setText(Integer.toString(vol_counter));
+        }
+        else {
+            return;
+        }
+    }
+
+    public void volume_down (View view) {
+        if (vol_counter > 0) {
+            vol_counter--;
+            volume_value_showValue.setText(Integer.toString(vol_counter));
         }
         else {
             return;

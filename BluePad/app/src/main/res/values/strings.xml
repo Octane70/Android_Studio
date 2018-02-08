@@ -16,5 +16,6 @@
     <string name="sound">Sfx</string>
     <string name="volume">Vol</string>
     <string name="sound_cntrl">Sound Control</string>
-    <string name="right_value">100</string>
+    <string name="sound_value">OFF</string>
+    <string name="vol_value">100</string>
 </resources>
