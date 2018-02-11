@@ -100,7 +100,7 @@
         android:layout_marginLeft="14dp"
         android:layout_marginTop="32dp"
         android:text="@string/e_stop"
-        android:textColor="@color/e_stop"
+        android:textColor="@color/red"
         app:layout_constraintEnd_toStartOf="@+id/manual"
         app:layout_constraintStart_toEndOf="@+id/volume_up"
         app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
@@ -124,8 +124,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:text="@string/sound_on"
-        android:background="@color/sound_on"
-        android:onClick="sound_on"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
 
@@ -137,7 +135,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/sound_off"
-        android:onClick="sound_off"
+        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sound_on" />
 
@@ -201,21 +199,12 @@
 
 
     <TextView
-        android:id="@+id/sound_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginStart="12dp"
-        android:text="@string/sound_value"
-        app:layout_constraintBottom_toTopOf="@+id/sound_on"
-        app:layout_constraintStart_toStartOf="@+id/sound_on" />
-
-    <TextView
         android:id="@+id/volume_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         android:text="@string/vol_value"
         app:layout_constraintBottom_toTopOf="@+id/volume_up"
         app:layout_constraintEnd_toEndOf="@+id/volume_up" />

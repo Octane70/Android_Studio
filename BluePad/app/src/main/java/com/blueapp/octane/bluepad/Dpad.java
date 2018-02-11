@@ -5,11 +5,13 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,11 +20,10 @@ import java.util.UUID;
 
 public class Dpad extends AppCompatActivity {
 
+    Button text_on,text_off;
     String address = null;
     String deviceName = null;
-    TextView sound_value_showValue;
     TextView volume_value_showValue;
-    int on_off = 0;
     int vol_counter = 100;
 
     BluetoothAdapter myBluetooth = null;
@@ -44,8 +45,10 @@ public class Dpad extends AppCompatActivity {
         address = newint.getStringExtra(Devices.EXTRA_ADDRESS);
 
         TextView statusView = (TextView) findViewById(R.id.status);
-        sound_value_showValue = (TextView) findViewById(R.id.sound_value);
         volume_value_showValue = (TextView) findViewById(R.id.volume_value);
+
+        text_on=(Button) findViewById(R.id.sound_on);
+        text_off=(Button) findViewById(R.id.sound_off);
 
         final View up_dpad = findViewById(R.id.up_dpad);
         final View down_dpad = findViewById(R.id.down_dpad);
@@ -174,7 +177,8 @@ public class Dpad extends AppCompatActivity {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("13", sound_on, event));
-
+                    text_on.setTextColor(Color.GREEN);
+                    text_off.setTextColor(Color.BLACK);
                 }
                 return false;
             }
@@ -186,7 +190,8 @@ public class Dpad extends AppCompatActivity {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("14", sound_off, event));
-
+                    text_off.setTextColor(Color.RED);
+                    text_on.setTextColor(Color.BLACK);
                 }
                 return false;
             }
@@ -218,26 +223,6 @@ public class Dpad extends AppCompatActivity {
 
     }
 
-    public void sound_on (View view) {
-        if (on_off == 0) {;
-            on_off = 1;
-            sound_value_showValue.setText(Integer.toString(on_off));
-        }
-        else {
-            return;
-        }
-    }
-
-    public void sound_off (View view){
-        if(on_off == 1) {
-            on_off = 0;
-            sound_value_showValue.setText(Integer.toString(on_off));
-        }
-        else {
-            return;
-        }
-    }
-
     public void volume_up (View view) {
         if (vol_counter < 100) {
             vol_counter++;
@@ -247,7 +232,6 @@ public class Dpad extends AppCompatActivity {
             return;
         }
     }
-
     public void volume_down (View view) {
         if (vol_counter > 0) {
             vol_counter--;
@@ -257,6 +241,7 @@ public class Dpad extends AppCompatActivity {
             return;
         }
     }
+
     private String buildMessage(String operation, View Buttons, MotionEvent event) {
         return operation;
     }
