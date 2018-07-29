@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="dialogMargin">16dp</dimen>
+    <dimen name="dialogMinWidth">280dp</dimen>
+    <dimen name="dialogElevation">8dp</dimen>
+    <dimen name="autobootmenuMinHeight">64dp</dimen>
+    <dimen name="autobootmenuPadding">16dp</dimen>
+    <dimen name="autobootmenuTitlePaddingBottom">2dp</dimen>
+    <dimen name="itemMinHeight">56dp</dimen>
+    <dimen name="itemPadding">16dp</dimen>
+    <dimen name="dividerHeight">2dp</dimen>
+    <dimen name="textWidth">185dp</dimen>
+</resources>
