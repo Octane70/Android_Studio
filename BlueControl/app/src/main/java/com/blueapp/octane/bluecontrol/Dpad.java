@@ -47,19 +47,19 @@ public class Dpad extends AppCompatActivity {
         TextView statusView = (TextView) findViewById(R.id.status);
         volume_value_showValue = (TextView) findViewById(R.id.volume_value);
 
-        text_on=(Button) findViewById(R.id.sound_on);
-        text_off=(Button) findViewById(R.id.sound_off);
+        text_on=(Button) findViewById(R.id.door_lock);
+        text_off=(Button) findViewById(R.id.door_unlock);
 
         final View up_dpad = findViewById(R.id.up_dpad);
         final View down_dpad = findViewById(R.id.down_dpad);
         final View left_dpad = findViewById(R.id.left_dpad);
         final View right_dpad = findViewById(R.id.right_dpad);
-        final View manual = findViewById(R.id.manual);
+        final View manual = findViewById(R.id.start);
         final View auto = findViewById(R.id.auto);
         final View e_stop = findViewById(R.id.e_stop);
         final View shutdown = findViewById(R.id.shutdown);
-        final View sound_on = findViewById(R.id.sound_on);
-        final View sound_off = findViewById(R.id.sound_off);
+        final View sound_on = findViewById(R.id.door_lock);
+        final View sound_off = findViewById(R.id.door_unlock);
         final View volume_up = findViewById(R.id.volume_up);
         final View volume_down = findViewById(R.id.volume_down);
 
