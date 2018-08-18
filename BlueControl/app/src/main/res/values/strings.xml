@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BlueControl</string>
+    <string name="title_activity_button">Dpad</string>
+    <string name="up">Up</string>
+    <string name="down">Down</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="manual">Manual</string>
+    <string name="auto">Auto</string>
+    <string name="e_stop">E-Stop</string>
+    <string name="shutdown">Shutdown</string>
+    <string name="vol_pos">+</string>
+    <string name="vol_neg">-</string>
+    <string name="sound_on">on</string>
+    <string name="sound_off">off</string>
+    <string name="sound">Sfx</string>
+    <string name="volume">Vol</string>
+    <string name="sound_cntrl">Sound Control</string>
+    <string name="vol_value">100</string>
+</resources>

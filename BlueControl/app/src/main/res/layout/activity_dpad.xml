@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.blueapp.octane.bluecontrol.Dpad"
+    tools:ignore="GradleDependency"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Status"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <Button
+        android:id="@+id/up_dpad"
+        android:layout_width="70dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/up_button"
+        android:text="@string/up"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <Button
+        android:id="@+id/down_dpad"
+        android:layout_width="70dp"
+        android:layout_height="86dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/down_button"
+        android:text="@string/down"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/up_dpad"
+        tools:ignore="MissingConstraints,RtlHardcoded" />
+
+    <Button
+        android:id="@+id/left_dpad"
+        android:layout_width="86dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="113dp"
+        android:background="@drawable/left_button"
+        android:text="@string/left"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/right_dpad"
+        android:layout_width="86dp"
+        android:layout_height="70dp"
+        android:layout_marginRight="85dp"
+        android:layout_marginTop="113dp"
+        android:background="@drawable/right_button"
+        android:text="@string/right"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/manual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/manual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
+
+    <Button
+        android:id="@+id/auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manual" />
+
+    <Button
+        android:id="@+id/e_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/e_stop"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toStartOf="@+id/manual"
+        app:layout_constraintStart_toEndOf="@+id/volume_up"
+        app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
+
+    <Button
+        android:id="@+id/shutdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/shutdown"
+        app:layout_constraintEnd_toStartOf="@+id/auto"
+        app:layout_constraintTop_toBottomOf="@+id/e_stop" />
+
+    <Button
+        android:id="@+id/sound_on"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/sound_on"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
+
+    <Button
+        android:id="@+id/sound_off"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/sound_off"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sound_on" />
+
+    <Button
+        android:id="@+id/volume_up"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
+        android:onClick="volume_up"
+        android:text="@string/vol_pos"
+        app:layout_constraintStart_toEndOf="@+id/sound_on"
+        app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
+
+    <Button
+        android:id="@+id/volume_down"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:onClick="volume_down"
+        android:text="@string/vol_neg"
+        app:layout_constraintStart_toEndOf="@+id/sound_off"
+        app:layout_constraintTop_toBottomOf="@+id/volume_up" />
+
+    <TextView
+        android:id="@+id/sound_cntrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/sound_cntrl"
+        app:layout_constraintStart_toStartOf="@+id/sound_off"
+        app:layout_constraintTop_toBottomOf="@+id/volume_down"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/sound"
+        app:layout_constraintStart_toStartOf="@+id/sound_on"
+        app:layout_constraintTop_toBottomOf="@+id/sound_on" />
+
+    <TextView
+        android:id="@+id/volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/volume"
+        app:layout_constraintStart_toStartOf="@+id/volume_up"
+        app:layout_constraintTop_toBottomOf="@+id/volume_up" />
+
+
+    <TextView
+        android:id="@+id/volume_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:text="@string/vol_value"
+        app:layout_constraintBottom_toTopOf="@+id/volume_up"
+        app:layout_constraintEnd_toEndOf="@+id/volume_up" />
+
+</android.support.constraint.ConstraintLayout>
