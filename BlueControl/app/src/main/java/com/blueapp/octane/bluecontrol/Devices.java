@@ -83,7 +83,7 @@ public class Devices extends AppCompatActivity {
             String address = info.split("\n")[1];
 
             // Make an intent to start next activity.
-            Intent i = new Intent(Devices.this, Dpad.class);
+            Intent i = new Intent(Devices.this, Controls.class);
 
             //Change the activity.
             i.putExtra(EXTRA_NAME, deviceName);

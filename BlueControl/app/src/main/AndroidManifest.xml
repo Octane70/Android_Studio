@@ -10,9 +10,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_bluepad"
+        android:icon="@mipmap/ic_launcher_bluecontrol"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_bluepad"
+        android:roundIcon="@mipmap/ic_launcher_bluecontrol"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Dpad"
+            android:name=".Controls"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>

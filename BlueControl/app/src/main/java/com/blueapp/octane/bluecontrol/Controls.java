@@ -18,7 +18,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.UUID;
 
-public class Dpad extends AppCompatActivity {
+public class Controls extends AppCompatActivity {
 
     Button text_on,text_off;
     String address = null;
@@ -38,208 +38,79 @@ public class Dpad extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_dpad);
+        setContentView(R.layout.activity_controls);
 
         Intent newint = getIntent();
         deviceName = newint.getStringExtra(Devices.EXTRA_NAME);
         address = newint.getStringExtra(Devices.EXTRA_ADDRESS);
 
         TextView statusView = (TextView) findViewById(R.id.status);
-        volume_value_showValue = (TextView) findViewById(R.id.volume_value);
 
-        text_on=(Button) findViewById(R.id.door_lock);
-        text_off=(Button) findViewById(R.id.door_unlock);
-
-        final View up_dpad = findViewById(R.id.up_dpad);
-        final View down_dpad = findViewById(R.id.down_dpad);
-        final View left_dpad = findViewById(R.id.left_dpad);
-        final View right_dpad = findViewById(R.id.right_dpad);
-        final View manual = findViewById(R.id.start);
-        final View auto = findViewById(R.id.auto);
-        final View e_stop = findViewById(R.id.e_stop);
-        final View shutdown = findViewById(R.id.shutdown);
-        final View sound_on = findViewById(R.id.door_lock);
-        final View sound_off = findViewById(R.id.door_unlock);
-        final View volume_up = findViewById(R.id.volume_up);
-        final View volume_down = findViewById(R.id.volume_down);
+        final View door_lock = findViewById(R.id.door_lock);
+        final View door_unlock = findViewById(R.id.door_unlock);
+        final View light_switch = findViewById(R.id.light_switch);
+        final View start = findViewById(R.id.start);
 
         statusView.setText("Connecting to " + deviceName);
 
         new ConnectBT().execute();
 
-        up_dpad.setOnTouchListener(new View.OnTouchListener() {
+        door_lock.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("1", up_dpad, event));
+                    send(buildMessage("1", door_lock, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("2", up_dpad, event));
+                    send(buildMessage("2", door_lock, event));
                 }
                 return false;
             }
         });
 
-        down_dpad.setOnTouchListener(new View.OnTouchListener() {
+        door_unlock.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("3", down_dpad, event));
+                    send(buildMessage("3", door_unlock, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("4", down_dpad, event));
+                    send(buildMessage("4", door_unlock, event));
                 }
                 return false;
             }
         });
 
-        left_dpad.setOnTouchListener(new View.OnTouchListener() {
+        light_switch.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("5", left_dpad, event));
+                    send(buildMessage("3", light_switch, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("6", left_dpad, event));
+                    send(buildMessage("4", light_switch, event));
                 }
                 return false;
             }
         });
 
-        right_dpad.setOnTouchListener(new View.OnTouchListener() {
+        start.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("7", right_dpad, event));
+                    send(buildMessage("5", start, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("8", right_dpad, event));
+                    send(buildMessage("6", start, event));
                 }
                 return false;
             }
         });
 
-        manual.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("9", manual, event));
-
-                }
-                return false;
-            }
-        });
-
-        auto.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("10", auto, event));
-
-                }
-                return false;
-            }
-        });
-
-        e_stop.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("11", e_stop, event));
-
-                }
-                return false;
-            }
-        });
-
-        shutdown.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("12", shutdown, event));
-
-                }
-                return false;
-            }
-        });
-
-        sound_on.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("13", sound_on, event));
-                    text_on.setTextColor(Color.GREEN);
-                    text_off.setTextColor(Color.BLACK);
-                }
-                return false;
-            }
-        });
-
-        sound_off.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("14", sound_off, event));
-                    text_off.setTextColor(Color.RED);
-                    text_on.setTextColor(Color.BLACK);
-                }
-                return false;
-            }
-        });
-
-        volume_up.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("15", volume_up, event));
-
-                }
-                return false;
-            }
-        });
-
-        volume_down.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("16", volume_down, event));
-
-                }
-                return false;
-            }
-        });
-
-    }
-
-    public void volume_up (View view) {
-        if (vol_counter < 100) {
-            vol_counter++;
-            volume_value_showValue.setText(Integer.toString(vol_counter));
-        }
-        else {
-            return;
-        }
-    }
-    public void volume_down (View view) {
-        if (vol_counter > 0) {
-            vol_counter--;
-            volume_value_showValue.setText(Integer.toString(vol_counter));
-        }
-        else {
-            return;
-        }
     }
 
     private String buildMessage(String operation, View Buttons, MotionEvent event) {
@@ -282,7 +153,7 @@ public class Dpad extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            progress = ProgressDialog.show(Dpad.this, "Connecting...", "Please wait!!!");  //show a progress dialog
+            progress = ProgressDialog.show(Controls.this, "Connecting...", "Please wait!!!");  //show a progress dialog
         }
 
         @Override

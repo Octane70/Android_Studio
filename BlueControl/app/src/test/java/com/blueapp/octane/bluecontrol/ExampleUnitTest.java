@@ -1,4 +1,4 @@
-package com.blueapp.octane.bluepad;
+package com.blueapp.octane.bluecontrol;
 
 import org.junit.Test;
 

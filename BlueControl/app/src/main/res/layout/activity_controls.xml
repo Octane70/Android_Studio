@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.blueapp.octane.bluecontrol.Dpad"
+    tools:context="com.blueapp.octane.bluecontrol.Controls"
     tools:ignore="GradleDependency"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp">
@@ -71,9 +71,11 @@
         android:id="@+id/light_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/light_bar_text"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/light_bar_text" />
 
     <TextView
         android:id="@+id/auto_start_stop"
@@ -101,8 +103,11 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher_bluecontrol"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_bluecontrol" />
 
 </android.support.constraint.ConstraintLayout>

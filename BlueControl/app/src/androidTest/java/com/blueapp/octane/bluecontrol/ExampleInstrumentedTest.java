@@ -1,4 +1,4 @@
-package com.blueapp.octane.bluepad;
+package com.blueapp.octane.bluecontrol;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
