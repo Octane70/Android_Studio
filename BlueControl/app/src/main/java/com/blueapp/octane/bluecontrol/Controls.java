@@ -88,10 +88,10 @@ public class Controls extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("3", light_switch, event));
+                    send(buildMessage("5", light_switch, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("4", light_switch, event));
+                    send(buildMessage("6", light_switch, event));
                 }
                 return false;
             }
@@ -102,10 +102,10 @@ public class Controls extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("5", start, event));
+                    send(buildMessage("7", start, event));
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("6", start, event));
+                    send(buildMessage("8", start, event));
                 }
                 return false;
             }
