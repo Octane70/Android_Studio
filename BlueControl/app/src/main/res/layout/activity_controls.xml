@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:text="Status"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -58,8 +58,8 @@
         android:id="@+id/light_bar_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="@string/light_bar_txt"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,15 +67,27 @@
         tools:ignore="HardcodedText,RtlHardcoded" />
 
 
-    <Switch
-        android:id="@+id/light_switch"
+    <Button
+        android:id="@+id/light_bar_off"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:text="@string/light_bar_off_txt"
+        android:textColor="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/light_bar_text" />
+
+    <Button
+        android:id="@+id/light_bar_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/light_bar_on_txt"
+        app:layout_constraintStart_toEndOf="@+id/light_bar_off"
+        app:layout_constraintTop_toTopOf="@+id/light_bar_off" />
 
     <TextView
         android:id="@+id/auto_start_stop"
@@ -86,7 +98,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/start_stop_txt"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/light_switch" />
+        app:layout_constraintTop_toBottomOf="@+id/light_bar_off" />
 
     <Button
         android:id="@+id/start"
@@ -106,6 +118,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/jeep_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher_bluecontrol" />

@@ -20,11 +20,10 @@ import java.util.UUID;
 
 public class Controls extends AppCompatActivity {
 
-    Button text_on,text_off;
+    Button lock_text_lock,lock_text_unlock;
+    Button light_text_on,light_text_off;
     String address = null;
     String deviceName = null;
-    TextView volume_value_showValue;
-    int vol_counter = 100;
 
     BluetoothAdapter myBluetooth = null;
     BluetoothSocket btSocket = null;
@@ -46,9 +45,15 @@ public class Controls extends AppCompatActivity {
 
         TextView statusView = (TextView) findViewById(R.id.status);
 
+        lock_text_lock=(Button) findViewById(R.id.door_lock);
+        lock_text_unlock=(Button) findViewById(R.id.door_unlock);
+        light_text_on=(Button) findViewById(R.id.light_bar_on);
+        light_text_off=(Button) findViewById(R.id.light_bar_on);
+
         final View door_lock = findViewById(R.id.door_lock);
         final View door_unlock = findViewById(R.id.door_unlock);
-        final View light_switch = findViewById(R.id.light_switch);
+        final View light_bar_on = findViewById(R.id.light_bar_on);
+        final View light_bar_off = findViewById(R.id.light_bar_on);
         final View start = findViewById(R.id.start);
 
         statusView.setText("Connecting to " + deviceName);
@@ -61,6 +66,8 @@ public class Controls extends AppCompatActivity {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("1", door_lock, event));
+                    lock_text_lock.setTextColor(Color.RED);
+                    lock_text_unlock.setTextColor(Color.BLACK);
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     send(buildMessage("2", door_lock, event));
@@ -75,6 +82,8 @@ public class Controls extends AppCompatActivity {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("3", door_unlock, event));
+                    lock_text_unlock.setTextColor(Color.RED);
+                    lock_text_lock.setTextColor(Color.BLACK);
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     send(buildMessage("4", door_unlock, event));
@@ -83,15 +92,23 @@ public class Controls extends AppCompatActivity {
             }
         });
 
-        light_switch.setOnTouchListener(new View.OnTouchListener() {
+        light_bar_on.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("5", light_switch, event));
+                    send(buildMessage("5", light_bar_on, event));
+                }
+                return false;
+            }
+        });
 
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    send(buildMessage("6", light_switch, event));
+        light_bar_off.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("6", light_bar_off, event));
                 }
                 return false;
             }

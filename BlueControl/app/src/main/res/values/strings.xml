@@ -5,7 +5,9 @@
     <string name="door_lock">Lock</string>
     <string name="door_unlock">Unlock</string>
     <string name="light_bar_txt">Light Bar</string>
+    <string name="light_bar_on_txt">On</string>
+    <string name="light_bar_off_txt">Off</string>
     <string name="start_stop_txt">Auto Start/Stop</string>
     <string name="auto_start">Start/Stop</string>
-    <string name="todo">TODO</string>
+    <string name="jeep_logo">Jeep Logo</string>
 </resources>
