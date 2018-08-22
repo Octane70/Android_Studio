@@ -48,12 +48,12 @@ public class Controls extends AppCompatActivity {
         lock_text_lock=(Button) findViewById(R.id.door_lock);
         lock_text_unlock=(Button) findViewById(R.id.door_unlock);
         light_text_on=(Button) findViewById(R.id.light_bar_on);
-        light_text_off=(Button) findViewById(R.id.light_bar_on);
+        light_text_off=(Button) findViewById(R.id.light_bar_off);
 
         final View door_lock = findViewById(R.id.door_lock);
         final View door_unlock = findViewById(R.id.door_unlock);
         final View light_bar_on = findViewById(R.id.light_bar_on);
-        final View light_bar_off = findViewById(R.id.light_bar_on);
+        final View light_bar_off = findViewById(R.id.light_bar_off);
         final View start = findViewById(R.id.start);
 
         statusView.setText("Connecting to " + deviceName);
@@ -92,23 +92,27 @@ public class Controls extends AppCompatActivity {
             }
         });
 
-        light_bar_on.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("5", light_bar_on, event));
-                }
-                return false;
-            }
-        });
-
         light_bar_off.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("6", light_bar_off, event));
+                    send(buildMessage("5", light_bar_off, event));
+                    light_text_off.setTextColor(Color.RED);
+                    light_text_on.setTextColor(Color.BLACK);
+                }
+                return false;
+            }
+        });
+
+        light_bar_on.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("6", light_bar_on, event));
+                    light_text_on.setTextColor(Color.RED);
+                    light_text_off.setTextColor(Color.BLACK);
                 }
                 return false;
             }
