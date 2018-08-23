@@ -10,4 +10,8 @@
     <string name="start_stop_txt">Auto Start/Stop</string>
     <string name="auto_start">Start/Stop</string>
     <string name="jeep_logo">Jeep Logo</string>
+    <string name="rpi_txt">RPI Controls</string>
+    <string name="reboot">Reboot</string>
+    <string name="shutdown">Shutdown</string>
+    <string name="textview">TextView</string>
 </resources>

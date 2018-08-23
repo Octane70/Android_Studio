@@ -54,6 +54,8 @@ public class Controls extends AppCompatActivity {
         final View door_unlock = findViewById(R.id.door_unlock);
         final View light_bar_on = findViewById(R.id.light_bar_on);
         final View light_bar_off = findViewById(R.id.light_bar_off);
+        final View reboot = findViewById(R.id.reboot);
+        final View shutdown = findViewById(R.id.shutdown);
         final View start = findViewById(R.id.start);
 
         statusView.setText("Connecting to " + deviceName);
@@ -127,6 +129,34 @@ public class Controls extends AppCompatActivity {
 
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {
                     send(buildMessage("8", start, event));
+                }
+                return false;
+            }
+        });
+
+        reboot.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("9", reboot, event));
+
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    send(buildMessage("10", reboot, event));
+                }
+                return false;
+            }
+        });
+
+        shutdown.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("11", shutdown, event));
+
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    send(buildMessage("12", shutdown, event));
                 }
                 return false;
             }
