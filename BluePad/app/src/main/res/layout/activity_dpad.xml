@@ -70,58 +70,69 @@
 
     <Button
         android:id="@+id/manual"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginRight="136dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="16dp"
         android:text="@string/manual"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto" />
 
     <Button
         android:id="@+id/auto"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/auto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/manual" />
+        app:layout_constraintEnd_toStartOf="@+id/send"
+        app:layout_constraintStart_toEndOf="@+id/volume_down"
+        app:layout_constraintTop_toBottomOf="@+id/e_stop" />
 
     <Button
         android:id="@+id/e_stop"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:text="@string/e_stop"
         android:textColor="@color/red"
-        app:layout_constraintEnd_toStartOf="@+id/manual"
+        app:layout_constraintEnd_toStartOf="@+id/picture"
         app:layout_constraintStart_toEndOf="@+id/volume_up"
         app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
 
     <Button
         android:id="@+id/shutdown"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:text="@string/shutdown"
-        app:layout_constraintEnd_toStartOf="@+id/auto"
-        app:layout_constraintTop_toBottomOf="@+id/e_stop" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manual" />
 
     <Button
         android:id="@+id/sound_on"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:text="@string/sound_on"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,10 +140,11 @@
 
     <Button
         android:id="@+id/sound_off"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/sound_off"
         android:textColor="@color/red"
@@ -141,25 +153,27 @@
 
     <Button
         android:id="@+id/volume_up"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
-        android:text="@string/vol_pos"
         android:onClick="volume_up"
+        android:text="@string/vol_pos"
         app:layout_constraintStart_toEndOf="@+id/sound_on"
         app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
 
     <Button
         android:id="@+id/volume_down"
+        style="@android:style/Widget.Button.Inset"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
-        android:text="@string/vol_neg"
         android:onClick="volume_down"
+        android:text="@string/vol_neg"
         app:layout_constraintStart_toEndOf="@+id/sound_off"
         app:layout_constraintTop_toBottomOf="@+id/volume_up" />
 
@@ -208,5 +222,88 @@
         android:text="@string/vol_value"
         app:layout_constraintBottom_toTopOf="@+id/volume_up"
         app:layout_constraintEnd_toEndOf="@+id/volume_up" />
+
+    <Button
+        android:id="@+id/picture"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/picture"
+        app:layout_constraintEnd_toStartOf="@+id/video_on"
+        app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
+
+    <Button
+        android:id="@+id/video_on"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/video_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
+
+    <Button
+        android:id="@+id/video_off"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/video_off"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/video_on" />
+
+    <TextView
+        android:id="@+id/capture_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/picture_txt"
+        app:layout_constraintEnd_toStartOf="@+id/video"
+        app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
+
+    <TextView
+        android:id="@+id/video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/video_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/down_dpad" />
+
+    <Button
+        android:id="@+id/reboot"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/reboot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manual" />
+
+    <Button
+        android:id="@+id/send"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/send"
+        app:layout_constraintEnd_toStartOf="@+id/video_off"
+        app:layout_constraintTop_toBottomOf="@+id/picture" />
 
 </android.support.constraint.ConstraintLayout>

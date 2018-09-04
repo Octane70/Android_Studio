@@ -20,7 +20,8 @@ import java.util.UUID;
 
 public class Dpad extends AppCompatActivity {
 
-    Button text_on,text_off;
+    Button sound_text_on,sound_text_off;
+    Button video_text_on,video_text_off;
     String address = null;
     String deviceName = null;
     TextView volume_value_showValue;
@@ -47,8 +48,10 @@ public class Dpad extends AppCompatActivity {
         TextView statusView = (TextView) findViewById(R.id.status);
         volume_value_showValue = (TextView) findViewById(R.id.volume_value);
 
-        text_on=(Button) findViewById(R.id.sound_on);
-        text_off=(Button) findViewById(R.id.sound_off);
+        sound_text_on=(Button) findViewById(R.id.sound_on);
+        sound_text_off=(Button) findViewById(R.id.sound_off);
+        video_text_on=(Button) findViewById(R.id.video_on);
+        video_text_off=(Button) findViewById(R.id.video_off);
 
         final View up_dpad = findViewById(R.id.up_dpad);
         final View down_dpad = findViewById(R.id.down_dpad);
@@ -58,10 +61,15 @@ public class Dpad extends AppCompatActivity {
         final View auto = findViewById(R.id.auto);
         final View e_stop = findViewById(R.id.e_stop);
         final View shutdown = findViewById(R.id.shutdown);
+        final View reboot = findViewById(R.id.reboot);
         final View sound_on = findViewById(R.id.sound_on);
         final View sound_off = findViewById(R.id.sound_off);
         final View volume_up = findViewById(R.id.volume_up);
         final View volume_down = findViewById(R.id.volume_down);
+        final View picture = findViewById(R.id.picture);
+        final View video_on = findViewById(R.id.video_on);
+        final View video_off = findViewById(R.id.video_off);
+        final View send = findViewById(R.id.send);
 
         statusView.setText("Connecting to " + deviceName);
 
@@ -171,14 +179,26 @@ public class Dpad extends AppCompatActivity {
             }
         });
 
+        reboot.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("17", reboot, event));
+
+                }
+                return false;
+            }
+        });
+
         sound_on.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("13", sound_on, event));
-                    text_on.setTextColor(Color.GREEN);
-                    text_off.setTextColor(Color.BLACK);
+                    sound_text_on.setTextColor(Color.GREEN);
+                    sound_text_off.setTextColor(Color.BLACK);
                 }
                 return false;
             }
@@ -190,8 +210,8 @@ public class Dpad extends AppCompatActivity {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("14", sound_off, event));
-                    text_off.setTextColor(Color.RED);
-                    text_on.setTextColor(Color.BLACK);
+                    sound_text_off.setTextColor(Color.RED);
+                    sound_text_on.setTextColor(Color.BLACK);
                 }
                 return false;
             }
@@ -215,6 +235,56 @@ public class Dpad extends AppCompatActivity {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("16", volume_down, event));
+
+                }
+                return false;
+            }
+        });
+
+        picture.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("18", picture, event));
+
+                }
+                return false;
+            }
+        });
+
+        video_on.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("19", video_on, event));
+                    video_text_on.setTextColor(Color.GREEN);
+                    video_text_off.setTextColor(Color.BLACK);
+                }
+                return false;
+            }
+        });
+
+        video_off.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("20", video_off, event));
+                    video_text_off.setTextColor(Color.RED);
+                    video_text_on.setTextColor(Color.BLACK);
+                }
+                return false;
+            }
+        });
+
+        send.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    send(buildMessage("21", send, event));
 
                 }
                 return false;

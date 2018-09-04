@@ -17,4 +17,11 @@
     <string name="volume">Vol</string>
     <string name="sound_cntrl">Sound Control</string>
     <string name="vol_value">100</string>
+    <string name="picture_txt">Picture</string>
+    <string name="picture">Pic</string>
+    <string name="video_on">on</string>
+    <string name="video_off">off</string>
+    <string name="video_txt">Video</string>
+    <string name="send">Send</string>
+    <string name="reboot">Reboot</string>
 </resources>
