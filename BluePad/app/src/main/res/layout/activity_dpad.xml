@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     tools:context="com.blueapp.octane.bluepad.Dpad"
     tools:ignore="GradleDependency"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Status"
-        tools:ignore="HardcodedText,RtlHardcoded"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginTop="16dp"
+        android:text="Status"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
     <Button
         android:id="@+id/up_dpad"
@@ -36,13 +36,13 @@
         android:id="@+id/down_dpad"
         android:layout_width="70dp"
         android:layout_height="86dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/down_button"
         android:text="@string/down"
-        tools:ignore="MissingConstraints,RtlHardcoded"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="25dp"
         app:layout_constraintTop_toBottomOf="@+id/up_dpad"
-        android:background="@drawable/down_button"/>
+        tools:ignore="MissingConstraints,RtlHardcoded" />
 
     <Button
         android:id="@+id/left_dpad"
@@ -50,23 +50,23 @@
         android:layout_height="70dp"
         android:layout_marginLeft="85dp"
         android:layout_marginTop="113dp"
+        android:background="@drawable/left_button"
         android:text="@string/left"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlHardcoded"
-        android:background="@drawable/left_button"/>
+        tools:ignore="RtlHardcoded" />
 
     <Button
         android:id="@+id/right_dpad"
         android:layout_width="86dp"
         android:layout_height="70dp"
-        android:text="@string/right"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="113dp"
         android:layout_marginRight="85dp"
+        android:layout_marginTop="113dp"
+        android:background="@drawable/right_button"
+        android:text="@string/right"
         app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="RtlHardcoded"
-        android:background="@drawable/right_button"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlHardcoded" />
 
     <Button
         android:id="@+id/manual"
@@ -181,9 +181,8 @@
         android:id="@+id/sound_cntrl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="7dp"
         android:text="@string/sound_cntrl"
         app:layout_constraintStart_toStartOf="@+id/sound_off"
         app:layout_constraintTop_toBottomOf="@+id/volume_down"
@@ -193,8 +192,8 @@
         android:id="@+id/sound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="1dp"
         android:text="@string/sound"
         app:layout_constraintStart_toStartOf="@+id/sound_on"
@@ -204,8 +203,8 @@
         android:id="@+id/volume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="1dp"
         android:text="@string/volume"
         app:layout_constraintStart_toStartOf="@+id/volume_up"
@@ -305,5 +304,88 @@
         android:text="@string/send"
         app:layout_constraintEnd_toStartOf="@+id/video_off"
         app:layout_constraintTop_toBottomOf="@+id/picture" />
+
+    <TextView
+        android:id="@+id/neopixel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/pixel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pixel_on"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/pixel_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/light_on"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/light_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pixel_on" />
+
+    <Button
+        android:id="@+id/light_off"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/light_off"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/light_on" />
+
+    <TextView
+        android:id="@+id/script"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/script"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/send" />
+
+    <Button
+        android:id="@+id/script_start"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/script_start"
+        app:layout_constraintEnd_toStartOf="@+id/script_stop"
+        app:layout_constraintTop_toBottomOf="@+id/send" />
+
+    <Button
+        android:id="@+id/script_stop"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/script_stop"
+        android:textColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/video_off" />
 
 </android.support.constraint.ConstraintLayout>

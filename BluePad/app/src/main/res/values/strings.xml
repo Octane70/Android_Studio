@@ -11,17 +11,25 @@
     <string name="shutdown">Shutdown</string>
     <string name="vol_pos">+</string>
     <string name="vol_neg">-</string>
-    <string name="sound_on">on</string>
-    <string name="sound_off">off</string>
+    <string name="sound_on">On</string>
+    <string name="sound_off">Off</string>
     <string name="sound">Sfx</string>
     <string name="volume">Vol</string>
     <string name="sound_cntrl">Sound Control</string>
     <string name="vol_value">100</string>
     <string name="picture_txt">Picture</string>
     <string name="picture">Pic</string>
-    <string name="video_on">on</string>
-    <string name="video_off">off</string>
+    <string name="video_on">On</string>
+    <string name="video_off">Off</string>
     <string name="video_txt">Video</string>
     <string name="send">Send</string>
     <string name="reboot">Reboot</string>
+    <string name="pixel">Neopixel</string>
+    <string name="pixel_on">PixelOn</string>
+    <string name="light_on">LightOn</string>
+    <string name="light_off">Off</string>
+    <string name="script">Main Script</string>
+    <string name="script_start">Start</string>
+    <string name="script_stop">Stop</string>
+
 </resources>
