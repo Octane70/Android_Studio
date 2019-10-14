@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.blueapp.octane.bluepad">
-    android:versionName="0.0.1 (alpha)"
-    android:versionCode="1">
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-sdk android:minSdkVersion="5" />
 
     <application
         android:allowBackup="true"
@@ -27,8 +24,12 @@
         <activity
             android:name=".Dpad"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".CameraView"
+            android:theme="@style/AppTheme.SlidrActivityTheme"></activity>
     </application>
+
+
 
 </manifest>

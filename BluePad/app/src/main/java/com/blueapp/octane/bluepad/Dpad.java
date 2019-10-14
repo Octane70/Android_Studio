@@ -7,7 +7,7 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,11 +19,11 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class Dpad extends AppCompatActivity {
-
+    
     Button sound_text_on,sound_text_off;
     Button video_text_on,video_text_off;
     Button pixel_text_on;
-    Button light_text_on,light_text_off;
+    Button light_text_on,pixel_text_off;
     Button script_text_start,script_text_stop;
     String address = null;
     String deviceName = null;
@@ -41,7 +41,6 @@ public class Dpad extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_dpad);
 
         Intent newint = getIntent();
@@ -57,7 +56,7 @@ public class Dpad extends AppCompatActivity {
         video_text_off=(Button) findViewById(R.id.video_off);
         pixel_text_on=(Button) findViewById(R.id.pixel_on);
         light_text_on=(Button) findViewById(R.id.light_on);
-        light_text_off=(Button) findViewById(R.id.light_off);
+        pixel_text_off=(Button) findViewById(R.id.pixel_off);
         script_text_start=(Button) findViewById(R.id.script_start);
         script_text_stop=(Button) findViewById(R.id.script_stop);
 
@@ -80,10 +79,9 @@ public class Dpad extends AppCompatActivity {
         final View send = findViewById(R.id.send);
         final View pixel_on = findViewById(R.id.pixel_on);
         final View light_on = findViewById(R.id.light_on);
-        final View light_off = findViewById(R.id.light_off);
+        final View pixel_off = findViewById(R.id.pixel_off);
         final View script_start = findViewById(R.id.script_start);
         final View script_stop = findViewById(R.id.script_stop);
-
 
         statusView.setText("Connecting to " + deviceName);
 
@@ -305,39 +303,41 @@ public class Dpad extends AppCompatActivity {
             }
         });
 
-        send.setOnTouchListener(new View.OnTouchListener() {
+        pixel_on.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("22", pixel_on, event));
                     pixel_text_on.setTextColor(Color.GREEN);
-                    light_text_off.setTextColor(Color.BLACK);
+                    pixel_text_off.setTextColor(Color.BLACK);
+                    light_text_on.setTextColor(Color.BLACK);
                 }
                 return false;
             }
         });
 
-        send.setOnTouchListener(new View.OnTouchListener() {
+        light_on.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     send(buildMessage("23", light_on, event));
                     light_text_on.setTextColor(Color.GREEN);
-                    light_text_off.setTextColor(Color.BLACK);
+                    pixel_text_off.setTextColor(Color.BLACK);
+                    pixel_text_on.setTextColor(Color.BLACK);
                 }
                 return false;
             }
         });
 
-        send.setOnTouchListener(new View.OnTouchListener() {
+        pixel_off.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    send(buildMessage("24", light_off, event));
-                    light_text_off.setTextColor(Color.RED);
+                    send(buildMessage("24", pixel_off, event));
+                    pixel_text_off.setTextColor(Color.RED);
                     light_text_on.setTextColor(Color.BLACK);
                     pixel_text_on.setTextColor(Color.BLACK);
                 }
@@ -345,7 +345,7 @@ public class Dpad extends AppCompatActivity {
             }
         });
 
-        send.setOnTouchListener(new View.OnTouchListener() {
+        script_start.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
@@ -358,7 +358,7 @@ public class Dpad extends AppCompatActivity {
             }
         });
 
-        send.setOnTouchListener(new View.OnTouchListener() {
+        script_stop.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
@@ -370,6 +370,12 @@ public class Dpad extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+
+    public void openCameraview(View v) {
+        Intent intent = new Intent(this, CameraView.class);
+        startActivity(intent);
     }
 
     public void volume_up (View view) {

@@ -27,9 +27,12 @@
     <string name="pixel">Neopixel</string>
     <string name="pixel_on">PixelOn</string>
     <string name="light_on">LightOn</string>
-    <string name="light_off">Off</string>
+    <string name="pixel_off">Off</string>
     <string name="script">Main Script</string>
     <string name="script_start">Start</string>
     <string name="script_stop">Stop</string>
-
+    <string name="camera_view">Camera View</string>
+    <string name="lock_slide">Lock Slide</string>
+    <string name="unlock_slide">Unlock Slide</string>
+    <string name="video_feed">VFeed</string>
 </resources>
